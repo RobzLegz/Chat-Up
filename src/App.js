@@ -38,7 +38,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <form>
+      <form className="loginForm">
         <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" required/>
         <button onClick={hideForm} type="submit">Enter</button>
       </form>
@@ -54,7 +54,7 @@ const App = () => {
         </div>
         <div className="chatFooter">
           <form>
-            <input type="text" value={message} onChange={(e) => setMessage(e.target.value)}/>
+            <input type="text" placeholder="Send a message" value={message} onChange={(e) => setMessage(e.target.value)}/>
             <button className="noform" onClick={sendMessage} type="submit">Submit</button>
           </form>
         </div>
