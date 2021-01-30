@@ -9,6 +9,7 @@ const App = () => {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const user = username;
 
   const hideForm = (e) => {
     e.preventDefault();
@@ -27,7 +28,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    db.collection("messages").orderBy("timestamp", "desc").onSnapshot((snapshot) => (
+    db.collection("messages").orderBy("timestamp", "asc").onSnapshot((snapshot) => (
       setMessages(snapshot.docs.map((doc) => ({
         id: doc.id,
         data: doc.data(),

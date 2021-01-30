@@ -3,8 +3,12 @@ import "./Message.css";
 
 const Message = ({id, content:{timestamp, username, message}}) => {
     return (
-        <div>
-            <p>{message}</p>
+        <div className="message">
+            <div className="message-content">
+                <h3>{message}</h3>
+                <p>{username}</p>
+                <small>{new Date(timestamp?.toDate()).toLocaleTimeString()}</small>
+            </div>
         </div>
     );
 }

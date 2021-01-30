@@ -24,6 +24,10 @@
   height: calc(100vh - 60px);
   padding: 100px;
   background-color: rgb(56, 24, 107);
+  overflow-y: scroll;
+}
+.chatBody::-webkit-scrollbar {
+  display: none;
 }
 .chatFooter {
   position: fixed;
