@@ -1,10 +1,10 @@
 import React from 'react';
 import "./Message.css";
 
-const Message = () => {
+const Message = ({id, content:{timestamp, username, message}}) => {
     return (
         <div>
-            <p>Message text</p>
+            <p>{message}</p>
         </div>
     );
 }
