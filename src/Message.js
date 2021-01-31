@@ -8,7 +8,7 @@ const Message = ({id, content:{timestamp, username, message}}) => {
             <div className="message-content">
                 <p>{username}:</p>
                 <div className="message-container">
-                    <h3>{message}</h3>
+                    <h4>{message}</h4>
                 </div>
                 <small>{timeago.format(new Date(timestamp?.toDate()).toLocaleString())}</small>
             </div>

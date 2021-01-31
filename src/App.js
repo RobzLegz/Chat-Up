@@ -24,12 +24,16 @@ const App = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    setMessage("");
-    db.collection("messages").add({
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      message: message,
-      username: username,
-    });
+    if(message === ""){
+      return;
+    }else{  
+      setMessage("");
+      db.collection("messages").add({
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        message: message,
+        username: username,
+      });
+    }    
   }
 
   useEffect(() => {
@@ -61,7 +65,7 @@ const App = () => {
         </div>
         <div className="chatFooter">
           <form>
-            <input type="text" placeholder="Send a message" value={message} onChange={(e) => setMessage(e.target.value)}/>
+            <input type="text" placeholder={`Message as ${username}`} value={message} onChange={(e) => setMessage(e.target.value)}/>
             <button className="sendButton" onClick={sendMessage} type="submit"><SendIcon /></button>
           </form>
         </div>

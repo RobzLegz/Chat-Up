@@ -96,12 +96,26 @@
 }
 .chatFooter > form {
   width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .chatFooter > form > input {
-  width: 100%;
+  width: calc(100% - 50px);
   height: 30px;
   border-radius: 20px;
   padding: 0 10px;
   border: none;
   outline: none;
+}
+.sendButton {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: rgb(56, 24, 107);
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  padding: 8px 10px;
+  cursor: pointer;
 }
