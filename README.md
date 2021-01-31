@@ -1,6 +1,6 @@
 # Screenshots:
 <img src="src/screenshots/loginpagescreen1.png">
-<img src="src/screenshots/loginpagescreen1.png">
+<img src="src/screenshots/chatpagescreen2.png">
 <img src="src/screenshots/loginpagescreen1.png">
 # Getting Started with Create React App
 
