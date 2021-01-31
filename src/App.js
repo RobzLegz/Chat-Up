@@ -3,6 +3,7 @@ import "./App.css";
 import Message from './Message';
 import db from './firebase';
 import firebase from "firebase";
+import SendIcon from '@material-ui/icons/Send';
 
 const App = () => {
 
@@ -10,8 +11,12 @@ const App = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
-  const hideForm = (e) => {
-    e.preventDefault();
+  const login = (e) => {
+    if(username === ""){
+      window.location.reload();
+    }else{
+      e.preventDefault();
+    }
     document.querySelector(".loginForm").classList.toggle("noform");
     document.querySelector(".loginFormContainer").classList.toggle("noform");
     document.querySelector(".chatContainer").classList.add("openChat");
@@ -40,8 +45,8 @@ const App = () => {
     <div className="app">
       <div className="loginFormContainer">
         <form className="loginForm">
-          <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" required/>
-          <button onClick={hideForm} type="submit">Enter</button>
+          <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" />
+          <button onClick={login} type="submit">Enter</button>
         </form>
       </div>
       <div className="chatContainer">
@@ -57,7 +62,7 @@ const App = () => {
         <div className="chatFooter">
           <form>
             <input type="text" placeholder="Send a message" value={message} onChange={(e) => setMessage(e.target.value)}/>
-            <button className="noform" onClick={sendMessage} type="submit">Submit</button>
+            <button className="sendButton" onClick={sendMessage} type="submit"><SendIcon /></button>
           </form>
         </div>
       </div>
