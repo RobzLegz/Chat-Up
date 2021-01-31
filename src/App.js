@@ -13,7 +13,7 @@ const App = () => {
 
   const hideForm = (e) => {
     e.preventDefault();
-    document.querySelector("form").classList.add("noform");
+    document.querySelector(".loginForm").classList.toggle("noform");
     document.querySelector(".chatContainer").classList.add("openChat");
   } 
 
@@ -38,10 +38,12 @@ const App = () => {
 
   return (
     <div className="app">
-      <form className="loginForm">
-        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" required/>
-        <button onClick={hideForm} type="submit">Enter</button>
-      </form>
+      <div className="loginFormContainer">
+        <form className="loginForm">
+          <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" required/>
+          <button onClick={hideForm} type="submit">Enter</button>
+        </form>
+      </div>
       <div className="chatContainer">
         <div className="chatHeader">
           <h1>ChatUp</h1>

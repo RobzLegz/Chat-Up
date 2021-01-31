@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Message.css";
+import * as timeago from 'timeago.js';
 
 const Message = ({id, content:{timestamp, username, message}}) => {
     return (
@@ -9,7 +10,7 @@ const Message = ({id, content:{timestamp, username, message}}) => {
                 <div className="message-container">
                     <h3>{message}</h3>
                 </div>
-                <small>{new Date(timestamp?.toDate()).toLocaleTimeString()}</small>
+                <small>{timeago.format(new Date(timestamp?.toDate()).toLocaleString())}</small>
             </div>
         </div>
     );
