@@ -9,11 +9,11 @@ const App = () => {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const user = username;
 
   const hideForm = (e) => {
     e.preventDefault();
     document.querySelector(".loginForm").classList.toggle("noform");
+    document.querySelector(".loginFormContainer").classList.toggle("noform");
     document.querySelector(".chatContainer").classList.add("openChat");
   } 
 
