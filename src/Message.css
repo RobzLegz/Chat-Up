@@ -22,3 +22,25 @@
 .message-content > small {
   margin-left: 50px;
 }
+@media (max-width: 555px) {
+  h4 {
+    font-size: 12px;
+  }
+  small {
+    font-size: 10px;
+  }
+  .message {
+    width: 250px;
+  }
+}
+@media (max-width: 369px) {
+  h4 {
+    font-size: 11px;
+  }
+  small {
+    font-size: 9px;
+  }
+  .message {
+    width: 200px;
+  }
+}
