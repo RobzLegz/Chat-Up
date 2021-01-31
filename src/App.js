@@ -48,6 +48,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="loginFormContainer">
+        <h1>Chat Up | Chat with others anonymously</h1>
         <form className="loginForm">
           <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" />
           <button onClick={login} type="submit">Enter</button>
