@@ -27,7 +27,7 @@ const App = () => {
     e.preventDefault();
     if(message === "" && imageUrl === ""){
       return;
-    }else if(message === "" && imageUrl != ""){
+    }else if(message === "" && imageUrl !== ""){
       setImageUrl("");
       setMessage("");
       db.collection("messages").add({
@@ -53,7 +53,6 @@ const App = () => {
         imageUrl: imageUrl,
       });
     }
-    
   }
 
   useEffect(() => {
