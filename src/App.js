@@ -25,8 +25,16 @@ const App = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    if(message === ""){
+    if(message === "" && imageUrl === ""){
       return;
+    }else if(message === "" && imageUrl != ""){
+      setImageUrl("");
+      setMessage("");
+      db.collection("messages").add({
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        username: username,
+        imageUrl: imageUrl,
+      });
     }else if(imageUrl === ""){  
       setImageUrl("");
       setMessage("");
