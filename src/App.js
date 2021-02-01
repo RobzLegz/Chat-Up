@@ -4,6 +4,7 @@ import Message from './Message';
 import db from './firebase';
 import firebase from "firebase";
 import SendIcon from '@material-ui/icons/Send';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const App = () => {
 
@@ -22,6 +23,10 @@ const App = () => {
     document.querySelector(".loginFormContainer").classList.toggle("noform");
     document.querySelector(".chatContainer").classList.add("openChat");
   } 
+
+  const allowScroll = () => {
+    document.querySelector(".chatBody").classList.add("scrollChat");
+  }
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -56,7 +61,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    db.collection("messages").orderBy("timestamp", "asc").onSnapshot((snapshot) => (
+    db.collection("messages").orderBy("timestamp", "desc").onSnapshot((snapshot) => (
       setMessages(snapshot.docs.map((doc) => ({
         id: doc.id,
         data: doc.data(),
@@ -77,6 +82,10 @@ const App = () => {
         <div className="chatHeader">
           <h1>ChatUp</h1>
           <h3>Ask Web Community</h3>
+        </div>
+        <div className="newMessageHeader">
+          <p>New messages appear here</p>
+          <ExpandMoreIcon onClick={allowScroll} className="arrowIcon" />
         </div>
         <div className="chatBody">
           {messages.map(({id, data}) => (
