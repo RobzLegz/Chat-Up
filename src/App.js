@@ -87,7 +87,7 @@ const App = () => {
           <form>
             <input type="text" placeholder={`Message as ${username}`} value={message} onChange={(e) => setMessage(e.target.value)}/>
             <button className="sendButton" onClick={sendMessage} type="submit" style={{margin:"0 20px"}}><SendIcon /></button>
-            <input type="text" placeholder="Image URL" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
+            <input type="text" placeholder="Image URL :Optional" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
           </form>
         </div>
       </div>
