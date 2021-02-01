@@ -1,3 +1,7 @@
+# Screenshots:
+<img src="src/screenshots/loginpagescreen1.png">
+<img src="src/screenshots/chatpagescreen2.png">
+<img src="src/screenshots/mobileresponsive1.png" width="600px" height="auto">
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
