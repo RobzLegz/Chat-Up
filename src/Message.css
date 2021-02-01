@@ -9,6 +9,16 @@
   height: fit-content;
   max-width: 500px;
 }
+.squareMessage {
+  background: #fff;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  margin-bottom: 50px;
+  height: fit-content;
+  max-width: 500px;
+}
 .message-content {
   padding: 5px 30px;
   display: flex;
@@ -22,6 +32,15 @@
 .message-content > small {
   margin-left: 50px;
 }
+.openImage {
+  max-width: 100px;
+  max-height: 100px;
+  margin-top: 50px;
+  pointer-events: none;
+}
+.noImage {
+  display: none;
+}
 @media (max-width: 555px) {
   h4 {
     font-size: 12px;
@@ -31,6 +50,11 @@
   }
   .message {
     width: 250px;
+    flex-direction: column;
+  }
+  .squareMessage {
+    width: 250px;
+    flex-direction: column;
   }
 }
 @media (max-width: 369px) {
@@ -41,6 +65,9 @@
     font-size: 9px;
   }
   .message {
+    width: 200px;
+  }
+  .squareMessage {
     width: 200px;
   }
 }

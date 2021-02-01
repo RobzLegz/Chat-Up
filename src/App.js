@@ -10,6 +10,7 @@ const App = () => {
   const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [imageUrl, setImageUrl] = useState("");
 
   const login = (e) => {
     if(username === ""){
@@ -26,14 +27,24 @@ const App = () => {
     e.preventDefault();
     if(message === ""){
       return;
-    }else{  
+    }else if(imageUrl === ""){  
+      setImageUrl("");
       setMessage("");
       db.collection("messages").add({
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         message: message,
         username: username,
       });
-    }    
+    }else{
+      setImageUrl("");
+      setMessage("");
+      db.collection("messages").add({
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        message: message,
+        username: username,
+        imageUrl: imageUrl,
+      });
+    }
   }
 
   useEffect(() => {
@@ -67,7 +78,8 @@ const App = () => {
         <div className="chatFooter">
           <form>
             <input type="text" placeholder={`Message as ${username}`} value={message} onChange={(e) => setMessage(e.target.value)}/>
-            <button className="sendButton" onClick={sendMessage} type="submit"><SendIcon /></button>
+            <button className="sendButton" onClick={sendMessage} type="submit" style={{margin:"0 20px"}}><SendIcon /></button>
+            <input type="text" placeholder="Image URL" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
           </form>
         </div>
       </div>

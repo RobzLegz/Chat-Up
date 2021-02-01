@@ -96,7 +96,7 @@
   color: rgb(56, 24, 107);
 }
 .chatFooter > form {
-  width: 300px;
+  width: fit-content;
   display: flex;
   justify-content: space-around;
   align-items: center;
